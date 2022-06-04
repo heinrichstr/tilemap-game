@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameBoard.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="GameBoard" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 312, 168 )
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Hud"]
+margin_right = 640.0
+margin_bottom = 24.0
+color = Color( 0, 0, 0, 0.639216 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="Hud"]
+margin_left = 24.0
+margin_right = 64.0
+margin_bottom = 24.0
+text = "Level: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitPoints" type="Label" parent="Hud"]
+margin_left = 128.0
+margin_right = 199.0
+margin_bottom = 24.0
+text = "Hit Points: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Hud"]
+margin_left = 488.0
+margin_right = 559.0
+margin_bottom = 24.0
+text = "Score:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
